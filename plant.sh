@@ -5,4 +5,8 @@ currentDir=`pwd`
 #xec 2>
 echo $currentDir
 runCommand=${currentDir}/update.sh
-sed -i "s/\(HISTSIZE=[0-9]*\)/\1\n${runCommand}/g" ~/.bashrc
+#echo $runCommand | sed "s@\/@\\\/@g"
+#echo $runCommand
+#exit
+sed -i "s@\(HISTSIZE=[0-9]*\)@\1\n$runCommand@g" ~/.bashrc
+
